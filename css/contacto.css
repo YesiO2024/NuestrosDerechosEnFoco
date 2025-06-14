@@ -4,6 +4,28 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
+h2{
+  background-color: #652E6A;
+  color: white;
+  padding: 4rem;
+  margin:0;
+  font-size: 3rem;
+  text-align: center;
+
+}
+.parrafo{
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 2rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.cajas{
+  display:grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap:5px;
+}
 
 .formulario {
   display: grid;
