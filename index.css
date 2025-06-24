@@ -100,6 +100,103 @@ nav {
   text-decoration: none;
 }
 
+
+
+/*carrusel imagense*/
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* 100% por cada slide */
+}
+
+.slide {
+  width: 100vw;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 85vh; 
+  object-fit: cover;
+  display: block;
+}
+
+.texto-slide {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding-bottom: 0.1rem;
+  padding-top: 0.1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+
+/* Botones de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.prev {
+  left: 1rem;
+}
+
+.next {
+  right: 1rem;
+}
+.indicadores {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.indicadores button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicadores button.activo {
+  background-color: white;
+}
+
 /*footer*/
 
 footer {
