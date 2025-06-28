@@ -1,59 +1,53 @@
-let indiceActual = 0;
 const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
-const contenedorIndicadores = document.querySelector('.indicadores');
+const slideCount = document.querySelectorAll('.slide').length;
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const indicadores = document.querySelector('.indicadores');
 
-// Crear indicadores
-for (let i = 0; i < totalSlides; i++) {
-  const boton = document.createElement('button');
-  boton.addEventListener('click', () => {
-    indiceActual = i;
-    mostrarSlide(indiceActual);
-    reiniciarAutoAvance();
+let index = 0;
+
+// Crear botones indicadores
+for(let i=0; i < slideCount; i++){
+  const btn = document.createElement('button');
+  if(i === 0) btn.classList.add('activo');
+  btn.addEventListener('click', () => {
+    index = i;
+    moverCarrusel();
   });
-  contenedorIndicadores.appendChild(boton);
+  indicadores.appendChild(btn);
 }
 
-// Función principal para mostrar un slide
-function mostrarSlide(index) {
-  const offset = -index * 100;
-  slides.style.transform = `translateX(${offset}vw)`;
-
-  // Actualizar clase activa en los puntitos
-  const botonesIndicador = document.querySelectorAll('.indicadores button');
-  botonesIndicador.forEach((btn, i) => {
+function moverCarrusel(){
+  slides.style.transform = `translateX(${-index * 100}vw)`;
+  
+  // actualizar indicadores
+  indicadores.querySelectorAll('button').forEach((btn, i) => {
     btn.classList.toggle('activo', i === index);
   });
+  
+  // desactivar flechas según índice
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index === slideCount - 1;
+
+  // clase visual opcional
+  prevBtn.classList.toggle('disabled', index === 0);
+  nextBtn.classList.toggle('disabled', index === slideCount - 1);
 }
 
-// Botón siguiente
-document.querySelector('.next').addEventListener('click', () => {
-  indiceActual = (indiceActual + 1) % totalSlides;
-  mostrarSlide(indiceActual);
-  reiniciarAutoAvance();
+// eventos flechas
+prevBtn.addEventListener('click', () => {
+  if(index > 0) {
+    index -= 1;
+    moverCarrusel();
+  }
 });
 
-// Botón anterior
-document.querySelector('.prev').addEventListener('click', () => {
-  indiceActual = (indiceActual - 1 + totalSlides) % totalSlides;
-  mostrarSlide(indiceActual);
-  reiniciarAutoAvance();
+nextBtn.addEventListener('click', () => {
+  if(index < slideCount - 1) {
+    index += 1;
+    moverCarrusel();
+  }
 });
 
-// Autoavance cada 5 segundos
-let autoAvance = setInterval(() => {
-  indiceActual = (indiceActual + 1) % totalSlides;
-  mostrarSlide(indiceActual);
-}, 5000);
-
-// Función para reiniciar el intervalo cuando hay clics
-function reiniciarAutoAvance() {
-  clearInterval(autoAvance);
-  autoAvance = setInterval(() => {
-    indiceActual = (indiceActual + 1) % totalSlides;
-    mostrarSlide(indiceActual);
-  }, 5000);
-}
-
-// Mostrar el primer slide al cargar
-mostrarSlide(indiceActual);
+// inicializar estados
+moverCarrusel();

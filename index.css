@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
 
 body {
   margin: 0;
@@ -100,89 +102,155 @@ nav {
   text-decoration: none;
 }
 
-
-
-/*carrusel imagense*/
-
 .carrusel {
   position: relative;
   width: 100%;
+  height: 90vh;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0;
+  background: #000;
 }
-
 .slides {
   display: flex;
+  width: 300vw; /* 3 slides x 100vw */
+  height: 100vh;
+  margin: 0;
   transition: transform 0.5s ease-in-out;
-  width: 300%; /* 100% por cada slide */
 }
-
 .slide {
+  position: relative;           /* Para posicionar el contenido encima */
   width: 100vw;
-  flex-shrink: 0;
-  position: relative;
+  height: 100 vh;                /* altura fija, la podemos ajustar */
+  background-size: cover;       /* La imagen de fondo cubre todo */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat;
+  display: flex;                /* Para centrar contenido */
+  justify-content: center;      /* Horizontalmente */
+  align-items: center;          /* Verticalmente */
+  color: white; 
+  z-index: 1;                /* Texto claro sobre fondo oscuro */
+}
+.slide {
+  background-image: url('imagenes/encabezado-2.jpg');
+  background-color: rgba(37, 167, 102, 0.61); /* el morado */
+  background-blend-mode: multiply;  /* combina el color con la imagen */
+}
+.enlace-slide {
+  text-decoration: none;
+  color: inherit;
 }
 
-.slide img {
-  width: 100%;
-  height: 85vh; 
-  object-fit: cover;
-  display: block;
+.enlace-slide h1 {
+  text-decoration: none;
+  color: white;  /* o el color que vos quieras */
 }
-
-.texto-slide {
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding-bottom: 0.1rem;
-  padding-top: 0.1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+/* Contenido centrado dentro del slide */
+.contenido-slide {
   text-align: center;
-  border-radius: 8px;
-  max-width: 80%;
+  justify-content:center ;
+  max-width: 90%;               /* Que no ocupe todo el ancho */
+  z-index: 2;                   /* Que esté encima del fondo */
+}
+
+.encabezado-slide {
+  display: flex;
+  align-items: center;  /* centra verticalmente */
+  gap: 15px;            /* espacio entre logo y texto */
+  justify-content: center;  /* centrado horizontal */
+}
+.encabezado-slide h1 {
+  text-align: left;
+  font-weight: bold;
+}
+
+.imagen1{
+  width: 30rem;
+  height: 10rem;
+}
+.imagen2{
+  width: 25rem;
+  height: 25rem;
+  padding-bottom: 10rem;
+}
+.encabezado-slide3 {
+  display: flex;
+  align-items: center;  /* centra verticalmente */
+  gap: 25px;            /* espacio entre logo y texto */
+  justify-content: center;  /* centrado horizontal */
+  padding-left: 20rem;
+}
+.encabezado-slide3 h1 {
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Logo dentro del contenido */
+.logo-NDF {
+  max-width: 350px;             /* Ajusta tamaño del logo */
+  margin-bottom: 20px;         /* Espacio abajo del logo */
 }
 
 
-/* Botones de navegación */
+/* Texto principal */
+.contenido-slide h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  text-decoration: none;  /* quita el subrayado */
+  color: white;   
+}
+
+.texto-slide h2 {
+  position: absolute;
+  bottom: 250px;   /* ajustá la distancia a gusto */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: white;
+  font-size: 1.8rem;
+}
+
+
+/* Botones */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0,0,0,0.4);
   color: white;
-  border: none;
+  border: 2rem;
+  border-color: #fff;
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
+  z-index: 100;
+  user-select: none;
+  transition: background-color 0.3s;
 }
-
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.7);
+  background-color: white;
+  color: #823c85;
+}
+.prev { left: 6rem; }
+.next { right: 6rem; }
+
+.prev.disabled,
+.next.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-.prev {
-  left: 1rem;
-}
 
-.next {
-  right: 1rem;
-}
+/* Indicadores */
 .indicadores {
   position: absolute;
-  bottom: 1rem;
+  bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 0.5rem;
-  z-index: 5;
+  z-index: 100;
 }
-
 .indicadores button {
   width: 12px;
   height: 12px;
@@ -192,9 +260,36 @@ nav {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .indicadores button.activo {
   background-color: white;
+}
+
+/*cuerpo de la pagina principal*/
+.cuerpo {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* novedades 2 partes, prensa 1 parte */
+  grid-template-rows: auto; /* una sola fila */
+  gap: 2rem;
+  padding: 1rem;
+}
+.novedades {
+  background-color: #9f96d1;
+  grid-column: 1 / 2; /* primera columna del grid */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  padding: 1rem;
+  gap:1rem;
+}
+.novedades div{
+  background-color: #fff;
+}
+.prensaynotas {
+  grid-column: 2/ 3; /* segunda columna del grid */
+  background-color: #3c856f;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 /*footer*/
