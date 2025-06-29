@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hace que el body ocupe toda la altura y se comporte como un contenedor flexible */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecera{
+    margin: 0;
+    padding: 0;
+}
+.imagenQuienes{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40%;
+}
+.cenrtroQuienessomos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 6rem 4rem ;
+    margin: 0;
+
+}
+.caja1 {
+  color: black;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* dos columnas internas */
+  align-items: flex-start;
+  padding:0;
+  height: 100%;
+}
+
+.columna-vacia {
+  /* no hace falta nada, se mantiene vacía */
+}
+
+.columna-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+  padding-top: 0;
+  margin: 0;
+}
+
+.caja2{
+    background-color: white;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
