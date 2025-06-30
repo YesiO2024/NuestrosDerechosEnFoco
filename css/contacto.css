@@ -4,15 +4,13 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
-h2{
-  background-color: #652E6A;
-  color: white;
-  padding: 4rem;
-  margin:0;
-  font-size: 3rem;
+.cabeceraI{
+  background-color: #823c85;
   text-align: center;
-
+  padding: 1rem;
+  color: white;
 }
+
 .parrafo{
   background-color: white;
   color: black;
