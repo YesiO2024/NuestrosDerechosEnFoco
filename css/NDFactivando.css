@@ -32,6 +32,9 @@ main {
   gap: 1rem;                              
   padding: 2rem;
 }
+.Iniciativas a{
+  text-decoration: none;
+}
 
 /* hacemos que el h2 ocupe las 3 columnas de la primera fila */
 .tituloINICIATIVA{
