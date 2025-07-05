@@ -163,7 +163,7 @@ h2{
 }
 @media screen and (max-width: 1024px) {
   #contenedor-productos {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+    grid-template-columns: repeat(2, 1fr); /* 3 columnas en tablet */
   }
   .cabeceraInicio li {
     width: 25vw; /* más ancho en tablet */
@@ -172,7 +172,7 @@ h2{
 
 @media screen and (max-width: 768px) {
   #contenedor-productos {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles grandes */
+    grid-template-columns: repeat(1, 1fr); /* 2 columnas en móviles grandes */
   }
   .cabeceraInicio ul {
     flex-direction: column;
@@ -200,10 +200,5 @@ h2{
     font-size: 2rem;
     padding-left:0; /* ajustar texto */
     padding-right: 0;
-  }
-}
-@media (max-width: 768px) {
-  h2 {
-    padding: 0.1rem 0.1rem;
   }
 }
