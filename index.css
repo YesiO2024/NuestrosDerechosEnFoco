@@ -356,6 +356,10 @@ nav {
   padding: 1rem;
   
 }
+.prensaynotas a{
+  text-decoration: none;
+  color:inherit;
+}
 .titulo2 {
   text-align: center;
   background-color: #823c85;

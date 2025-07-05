@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+main{
+    flex:1;
+}
+
+
+.cabeceraInicio{
+    background-color: #823c85;
+    padding-top: 1rem;
+padding-left: 3rem;
+padding-right: 3rem;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+}
+
+h1 , h2{
+    background-color: white;
+    color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.cabeceraInicio ul{
+    background-color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top:0 ;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    display:flex;
+    gap: 2rem;
+}
+
+.cabeceraInicio li{
+    background-color: #823c85;
+    border-radius: 8px;
+    padding: 0.3rem;
+    width: 15vw;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cabeceraInicio li:hover{
+    background-color: rgb(226, 212, 84);
+}
+
+
+.cabeceraInicio a{
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+   font-weight: 700;
+   width: 100%;
+}
+.cabeceraInicio a:hover{
+    color: #823c85;
+} 
+
+.productosCatalogo{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h2{
+    display: flex;
+}
+#contenedor-productos{
+    max-width: 100%;
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+h2{
+  grid-column: 1 / -1; /* ocupa desde la columna 1 hasta la última */
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #823c85;
+  color:white;
+  padding: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta-producto {
+  background-color:#fbf5fd;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  width: 350px;                /* le damos un ancho fijo para que no ocupe todo */
+  max-width: 100%;
+  border: 1px solid black;
+}
+
+.tarjeta-producto img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.descripcion-producto{
+
+    background-color: beige;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+    text-align: left;
+    height: 25%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+
+}
+.boton-producto{
+    background-color: white;
+    width: auto;
+    height: 3vh;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.boton-producto:hover{
+    background-color: #823c85;
+    color: #fbf5fd;
+}
+@media screen and (max-width: 1024px) {
+  #contenedor-productos {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+  }
+  .cabeceraInicio li {
+    width: 25vw; /* más ancho en tablet */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #contenedor-productos {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles grandes */
+  }
+  .cabeceraInicio ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .cabeceraInicio li {
+    width: 80%; /* más cómodo en columnas */
+  }
+  h2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #contenedor-productos {
+    grid-template-columns: 1fr; /* 1 columna en móviles chicos */
+  }
+  h1, h2 {
+    font-size: 2rem;
+    padding-left:0; /* ajustar texto */
+    padding-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    padding: 0.1rem 0.1rem;
+  }
+}

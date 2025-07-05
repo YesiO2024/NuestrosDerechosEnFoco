@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../css/NDFactivando.css">
+     <link rel="stylesheet" href="../index.css"> <!-- Esta en todas  -->
+    <link rel="stylesheet" href="../css/blog.css"> <!-- Particular de casa hoja de estilo  -->
+    <link rel="stylesheet" href="../css/BlogCarrito.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-    <title>NDF Activando</title>
+    <title>BlogCarrito</title>
     <link rel="icon" href="../imagenes/favicon(1).ico" type="image/x-icon">
+
 </head>
 <body>
 <header> 
@@ -47,41 +49,26 @@
   
 </header>
     <main>
-    <div class="cabeceraI" >
-      <h1>NDF Activando</h1>
-    </div>
 
-<section class="Iniciativas">
-    <h2 class="tituloINICIATIVA">Nuestras Iniciativas</h2>
-  <div class="cajasI">
-    <div class="cajaimagenI" id="c1">
-    <img class="imgcajaI" src="../imagenes/tapa-cuadernillo-esi-anticapacitista.png" alt="tapa de cuadernillo de esi anticapacitista">
-    </div>
-    <a href="../paginas NDFactivando/Esi-anticapacitista.html">
-      <h3 class="tituloESI">Esi Anticapacitista</h3>
-    </a>
-    <p>Aportes y herramientas para docentes desde una perspectiva de discapacidad y accesibilidad.</p>
-    <p>Construimos un cuadernillo destinado a docentes, para promover una ESI con perspectiva de discapacidad y accesibilidad.</p>
-  </div>
-  <div class="cajasI"> 
-    <div class="cajaimagenI" id="c2"><img  class="imgcajaI" src="../imagenes/formacion municipios.png" alt="logo ndf que dice construyendo un Estado con perspectiva en discapacidad">
-    </div>
-    <a href="../paginas NDFactivando/Formacion Municipios.html">
-      <h3 class="tituloMunicipios">Formación Municipios</h3>
-    </a>
-    <p>Una iniciativa que promueve la formación a trabajadoras y trabajadores del Estado.Curso virtual autogestionado.Plataforma y contenidos accesibles desarrollados en alianza con Libertate.Formación basada en herramientas y prácticas concretas para trabajadores/as del Estado.
-</p>
-</div>
-<div class="cajasI"> 
-    <div class="cajaimagenI" id="c3"><img  class="imgcajaI" src="../imagenes/logo.png" alt="logo ndf">
-      <p id="bondi">Construyendo comunidad con Perspectiva en Discapacidad</p>
-    </div>
-    <h3 class="tituloBondi">Bondi Disca</h3>
-    <p>Formación de promocion de derechos con perspetiva en genero para personas con discapacidad. Curso virtual autogestionado.Plataforma y contenidos accesibles.Formación basada en herramientas y prácticas concretas desde personas co discapacidad para personas con discapacidad.
-</p>
-</div>
 
+<section class="cabeceraInicio">
+<h1>Catalogo de lugares accesibles</h1>
+			<ul>
+				<li><a href="./Blog.html">Inicio/Productos</a></li>
+			    <li><a href="./BlogCarrito.html" >Carrito: <span id="contador-carrito">0</span></a></li>
+            </ul>
 </section>
+<section>
+			<h2 class="titulo-carrito">Carrito de compras</h2>
+			<section id="contenedor-carrito">
+				<!-- Productos del carrito -->
+			</section>
+			<section id="resumen-carrito">
+				<!-- insertar aca con js el resumen del carrito -->
+			</section>	
+</section>
+
+
     </main>
     <footer>
   <div class="footer-container">
@@ -118,5 +105,9 @@
     </div>
   </div>
     </footer>
+
+
+
+ <script src="../js/blogCarrito.js"></script>   
 </body>
 </html>

@@ -97,3 +97,11 @@ text-align: center;
   background-color:#C8B202;
   padding: 1rem 1rem 1rem 1rem;
 }
+.tituloESI:hover{
+  color: #41B282;
+  background-color:#823c85;
+}
+.tituloMunicipios:hover{
+  color: #AB0E43;
+  background-color: #C8B202;
+}
